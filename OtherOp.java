@@ -55,6 +55,7 @@ public class OtherOp  extends Frame implements ActionListener, WindowListener{
 		
 		addWindowListener(this);
 		
+		setResizable(false);
 		setTitle("Calculator");
 		setSize(500,200);
 		setVisible(true);
@@ -88,6 +89,13 @@ public class OtherOp  extends Frame implements ActionListener, WindowListener{
 		{
 			SQRT s = new SQRT();
 			s.setVisible(true);
+			this.dispose();
+		}
+		
+		if(event.getSource() == exp) 
+		{
+			Exponent Ex = new Exponent();
+			Ex.setVisible(true);
 			this.dispose();
 		}
 		

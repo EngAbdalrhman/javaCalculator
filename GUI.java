@@ -33,6 +33,7 @@ public class GUI extends Frame implements ActionListener, WindowListener{
 
 		addWindowListener(this);
 		
+		setResizable(false);
 		setTitle("Calculator");
 		setSize(200,200);
 		setVisible(true);

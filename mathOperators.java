@@ -38,6 +38,7 @@ public class mathOperators {
 	{
 		double result;
 		result = Math.pow(x,y);
+		// for loop
 		System.out.println(result);
 	}//Exponent
 	public  int Factorial (int x) 

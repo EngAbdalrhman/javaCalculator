@@ -3,20 +3,19 @@ package Calculator;
 import java.awt.*;
 import java.awt.event.*;
 
-public class SQRT  extends Frame implements ActionListener, WindowListener{
-	mathOperators math = new mathOperators();
+public class Exponent extends Frame implements ActionListener, WindowListener{
 	OtherOp sq = new OtherOp();
-	TextField x,y,z;
+	TextField x,n;
 	Button done;
-	public SQRT() {
-		setLayout(new GridLayout(4,1));
+	public Exponent() 
+	{
+		setLayout(new GridLayout(3,1));
 
 		x = new TextField();
 		add(x);
-		y = new TextField();
-		add(y);
-		z = new TextField();
-		add(z);
+		n = new TextField();
+		add(n);
+		
 		
 		done = new Button("done");
 		add(done);
@@ -25,7 +24,7 @@ public class SQRT  extends Frame implements ActionListener, WindowListener{
 		addWindowListener(this);
 		
 		setTitle("Calculator");
-		setSize(500,200);
+		setSize(500,150);
 		setVisible(true);
 		
 	}
@@ -35,23 +34,18 @@ public class SQRT  extends Frame implements ActionListener, WindowListener{
 		if(e.getSource() == done) 
 		{
 			String tx = x.getText();
-			String ty = y.getText();
-			String tz = z.getText();
+			String tn = n.getText();
 
 			try
 			{
 			int xnum =Integer.parseInt(tx.trim());
-			int ynum =Integer.parseInt(ty.trim());
-			int znum =Integer.parseInt(tz.trim());
+			int pow =Integer.parseInt(tn.trim());
 
-			double arr[] =math.sqrt(xnum, ynum, znum);
-			double x1 = arr[0];
-			double x2 = arr[1];
+			double result = Math.pow(xnum,pow);
 			
-			String xx1= String.valueOf(x1);
-			String xx2= String.valueOf(x2);
+			String Sresult= String.valueOf(result);
 			
-			sq.result.setText("x1 =" + xx1 +" , x2=" + xx2);
+			sq.result.setText(Sresult);
 			 }
 			 catch(NumberFormatException error) 
 			 {
@@ -104,6 +98,5 @@ public class SQRT  extends Frame implements ActionListener, WindowListener{
 		
 	}
 
-	
 
 }

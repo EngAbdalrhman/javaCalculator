@@ -3,6 +3,9 @@ package Calculator;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ArraysOp {
 
@@ -10,25 +13,14 @@ public class ArraysOp {
 
 	/**
 	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ArraysOp window = new ArraysOp();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	// not main
 
 	/**
 	 * Create the application.
 	 */
 	public ArraysOp() {
 		initialize();
+		frame.setVisible(true);
 	}
 
 	/**
@@ -36,8 +28,44 @@ public class ArraysOp {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 325, 275);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JButton btnSum = new JButton("SUM");
+		btnSum.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnSum.setBounds(64, 23, 89, 75);
+		frame.getContentPane().add(btnSum);
+		
+		JButton btnMin = new JButton("MINOUS");
+		btnMin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnMin.setBounds(163, 23, 89, 75);
+		frame.getContentPane().add(btnMin);
+		
+		JButton btnMulti = new JButton("MULTI");
+		btnMulti.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnMulti.setBounds(64, 109, 188, 47);
+		frame.getContentPane().add(btnMulti);
+		
+		JButton back = new JButton("BACK");
+		back.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				GUI gui = new GUI();
+				gui.setVisible(true);
+				frame.dispose();
+			}
+		});
+		back.setBounds(113, 167, 89, 23);
+		frame.getContentPane().add(back);
 	}
 
 }
