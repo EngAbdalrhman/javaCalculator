@@ -11,25 +11,9 @@ public class array {
 		int[][] array2 = new int[size][size2];
 		
 		int[][] result = new int[size][size2];
-		for (int i = 0; i < array1.length; i++)
-		{
-			
-			for (int j = 0; j < array1[0].length; j++) 
-			{
-				System.out.println("Enter the element no."+ (i+1)+" of Array 1");
-				array1[i][j] = input.nextInt();
-			}
-		}
-		
-		for (int i = 0; i < array2.length; i++)
-		{
-			
-			for (int j = 0; j < array2[0].length; j++) 
-			{
-				System.out.println("Enter the element no."+ (i+1)+" of Array 2");
-				array2[i][j] = input.nextInt();
-			}
-		}
+		fillArray(array1, 1);
+		fillArray(array2, 2);		
+
 		for (int row = 0; row < result.length; row++)
 		{
 			for (int coulmns = 0; coulmns < result[0].length; coulmns++)
@@ -48,25 +32,9 @@ public class array {
 		int[][] array2 = new int[size][size2];
 		
 		int[][] result = new int[size][size2];
-		for (int i = 0; i < array1.length; i++)
-		{
-			
-			for (int j = 0; j < array1[0].length; j++) 
-			{
-				System.out.println("Enter the element no."+ (i+1)+" of Array 1");
-				array1[i][j] = input.nextInt();
-			}
-		}
-		
-		for (int i = 0; i < array2.length; i++)
-		{
-			
-			for (int j = 0; j < array2[0].length; j++) 
-			{
-				System.out.println("Enter the element no."+ (i+1)+" of Array 2");
-				array2[i][j] = input.nextInt();
-			}
-		}
+		fillArray(array1, 1);		
+		fillArray(array2, 2);		
+
 		for (int row = 0; row < result.length; row++)
 		{
 			for (int coulmns = 0; coulmns < result[0].length; coulmns++)
@@ -87,25 +55,8 @@ public class array {
 		int[][] result = new int[size1][size4];
 		if (size2 == size3)
 		{
-			for (int i = 0; i < array1.length; i++)
-			{
-				
-				for (int j = 0; j < array1[0].length; j++) 
-				{
-					System.out.println("Enter the element no."+ (i+1)+" of Array 1");
-					array1[i][j] = input.nextInt();
-				}
-			}
-			
-			for (int i = 0; i < array2.length; i++)
-			{
-				
-				for (int j = 0; j < array2[0].length; j++) 
-				{
-					System.out.println("Enter the element no."+ (i+1)+" of Array 2");
-					array2[i][j] = input.nextInt();
-				}
-			}
+			fillArray(array1, 1);		
+			fillArray(array2, 2);		
 			
 			for (int rows = 0; rows < result.length; rows++)
 			{
@@ -134,7 +85,6 @@ public class array {
 
 		for (int i = 0; i < result.length; i++)
 		{
-			
 			for (int j = 0; j < result[0].length; j++) 
 			{
 				System.out.print(result[i][j] + " ");
@@ -142,6 +92,18 @@ public class array {
 			System.out.println();
 		}
 		System.out.println("-------------------------------------");
+	}
+	
+	static void fillArray(int[][] array , int num) 
+	{
+		for (int i = 0; i < array.length; i++)
+		{
+			for (int j = 0; j < array[0].length; j++) 
+			{
+				System.out.println("Enter the element row no."+ (i+1)+" col no." + (j+1)+" of Array" + num);
+				array[i][j] = input.nextInt();
+			}
+		}
 	}
 
 }

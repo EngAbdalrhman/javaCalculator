@@ -4,6 +4,7 @@ public class calculator {
 
 	public static void main(String[] args) 
 {
+	mathOperators math = new mathOperators();
 	Scanner input =new Scanner(System.in);
 	int n = 0;
 	double result;
@@ -22,6 +23,7 @@ public class calculator {
 		System.out.println("9. Exponent");
 		System.out.println("10. Factorial");
 		System.out.println("11. Moudels");
+		System.out.println("12. Prime Search");
 		System.out.println("0. Exit");
 		n = input.nextInt();
 		switch(n) 
@@ -37,7 +39,7 @@ public class calculator {
 			double fnum = input.nextDouble();
 			System.out.println("Enter Secound num");
 			double snum = input.nextDouble();
-			result = sum(fnum, snum);
+			result = math.sum(fnum, snum);
 			System.out.println("Result = "+ result);
 			break;
 		}
@@ -47,7 +49,7 @@ public class calculator {
 			double fnum = input.nextDouble();
 			System.out.println("Enter Secound num");
 			double snum = input.nextDouble();
-			result = sub(fnum, snum); 
+			result = math.sub(fnum, snum); 
 			System.out.println("Result = "+ result);
 			break;
 		}
@@ -57,7 +59,7 @@ public class calculator {
 			double fnum = input.nextDouble();
 			System.out.println("Enter Secound num");
 			double snum = input.nextDouble();
-			result = multi(fnum, snum); 
+			result = math.multi(fnum, snum); 
 			System.out.println("Result = "+ result);
 			break;
 		}
@@ -67,7 +69,7 @@ public class calculator {
 			double fnum = input.nextDouble();
 			System.out.println("Enter Secound num");
 			double snum = input.nextDouble();
-			result = div(fnum, snum); 
+			result = math.div(fnum, snum); 
 			System.out.println("Result = "+ result);
 			break;
 		}
@@ -113,7 +115,7 @@ public class calculator {
 			double snum= input.nextDouble();
 			System.out.println("enter third num");
 			double thnum= input.nextDouble();
-			sqrt(fnum, snum,thnum); 
+			math.sqrt(fnum, snum,thnum); 
 			break;
 		}
 		case 9:
@@ -122,14 +124,15 @@ public class calculator {
 			double fnum= input.nextDouble();
 			System.out.println("Enter Exponent");
 			double snum= input.nextDouble();
-			Exponent (fnum, snum);
+			math.Exponent (fnum, snum);
 			break;
 		}
 		case 10:
 		{
 			System.out.println("enter first num");
-			double fnum= input.nextDouble();
-			Factorial (fnum);
+			int fnum= input.nextInt();
+			int x = math.Factorial (fnum);
+			System.out.println(x);
 			break;
 		}
 		case 11:
@@ -138,11 +141,22 @@ public class calculator {
 			double fnum= input.nextDouble();
 			System.out.println("enter secound num");
 			double snum= input.nextDouble();
-			Moudels (fnum, snum);
+			math.Moudels (fnum, snum);
+			break;
+		}
+		case 12:
+		{
+			System.out.println("Enter the num");
+			int num = input.nextInt();
+			boolean con = math.isPrime(num); 
+			if(con)
+				System.out.println("the number is prime");
+			else	
+				System.out.println("the number isn't prime");
+			
 			break;
 		}
 		default:System.out.println("Enter correct number");
-		
 		}
 		
 		
@@ -150,54 +164,6 @@ public class calculator {
 	}//end do
 	while(n != 0);
 	}//end main
-	public static double sum (double x, double y) 
-	{
-		
-		return x + y;
-	}//sum
-		
-	public static double sub (double x, double y) 
-	{
-		return x - y;
-	}//Subtract
-		
-	public static double multi (double x, double y) 
-	{
-		return x * y;
-	}//Multiply
-		
-	public static double div (double x, double y) 
-	{
-		return x / y;
-	}//Dividing
-	public static void sqrt (double a, double b, double c)
-	{
-		double x1=(-b+Math.sqrt( Math.pow(b,2)-4*a*c))/(2*a);
-		double x2=(-b-Math.sqrt( Math.pow(b,2)-4*a*c))/(2*a);
-		System.out.println("first root is "+x1);
-		System.out.println("secound root is "+x2);
-	}
-
-	public static void Exponent (double x, double y) 
-	{
-		double result;
-		result = Math.pow(x,y);
-		System.out.println(result);
-	}//Exponent
-	public static void Factorial (double x) 
-	{
-		double result = 1;
-		for (double i = x; i > 0; i--) 
-		{
-			result = result * i;
-		}
-		System.out.println(result);
-	}//Factorial
-	public static void Moudels (double x, double y) 
-	{
-		double result;
-		result =x % y;
-		System.out.println(result);
-	}//Moudels
+	
 }//end class
 
