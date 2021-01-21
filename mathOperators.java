@@ -34,12 +34,18 @@ public class mathOperators {
 		//System.out.println("secound root is "+x2);
 	}
 
-	public  void Exponent (double x, double y) 
+	public  int Exponent (double x, double y) 
 	{
 		double result;
-		result = Math.pow(x,y);
+		//result = Math.pow(x,y);
 		// for loop
-		System.out.println(result);
+		int pow =1;
+		for(int i =0;i<y;i++)
+		{
+		pow *= x;
+		}
+		return pow;
+		//System.out.println(result);
 	}//Exponent
 	public  int Factorial (int x) 
 	{

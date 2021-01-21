@@ -29,6 +29,7 @@ public class OtherOp  extends Frame implements ActionListener, WindowListener{
 		pnl.add(lbl);
 		
 		result = new TextField();
+		//10
 		//result.setSize(200, 20);
 		result.setEditable(false);
 		pnl.add(result);

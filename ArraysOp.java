@@ -35,6 +35,9 @@ public class ArraysOp {
 		JButton btnSum = new JButton("SUM");
 		btnSum.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Arrays arr = new Arrays();
+				arr.setVisible(true);
+				frame.dispose();
 			}
 		});
 		btnSum.setBounds(64, 23, 89, 75);

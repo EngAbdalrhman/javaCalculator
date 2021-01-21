@@ -124,7 +124,8 @@ public class calculator {
 			double fnum= input.nextDouble();
 			System.out.println("Enter Exponent");
 			double snum= input.nextDouble();
-			math.Exponent (fnum, snum);
+			int results = math.Exponent (fnum, snum);
+			System.out.println(results);
 			break;
 		}
 		case 10:
