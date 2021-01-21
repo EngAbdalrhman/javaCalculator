@@ -8,7 +8,6 @@ public class Arrays extends Frame implements ActionListener, WindowListener{
 	Label lbl ;
 	Button back , nxt;
 	TextField txt , result;
-	boolean pressed = false;
 	String  snum;
 	int num = 0, n = 0,size1,size2,op = 1;
 	int[][] array = new int[size1][size2];
@@ -54,13 +53,6 @@ public class Arrays extends Frame implements ActionListener, WindowListener{
 			num =Integer.parseInt(snum.trim());
 			solve();
 			n++;
-			// String x = String.valueOf(pnum);
-		}
-		if (event.getSource() == txt)
-		{
-			if(pressed) {
-				result.setText("hi");
-			}
 		}
 	}
 	// sum & sub
