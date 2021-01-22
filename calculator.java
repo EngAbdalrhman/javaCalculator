@@ -4,7 +4,7 @@ public class calculator {
 
 	public static void main(String[] args) 
 {
-	mathOperators math = new mathOperators();
+	MathOperators math = new MathOperators();
 	Scanner input =new Scanner(System.in);
 	int n = 0;
 	double result;
@@ -81,7 +81,7 @@ public class calculator {
 				System.out.println("Enter size " + (i+1));
 				size[i] = input.nextInt();
 			}
-			array.arrsum(size[0] , size[1]);
+			ArraysOperations.arrsum(size[0] , size[1]);
 			break;
 		}
 		case 6:
@@ -92,7 +92,7 @@ public class calculator {
 				System.out.println("Enter size " + (i+1));
 				size[i] = input.nextInt();
 			}
-			array.arrsub(size[0] , size[1]);
+			ArraysOperations.arrsub(size[0] , size[1]);
 			break;
 		}
 		case 7: 
@@ -103,7 +103,7 @@ public class calculator {
 				System.out.println("Enter size " + (i+1));
 				size[i] = input.nextInt();
 			}
-			array.arrmulti(size[0], size[1], size[2], size[3]);
+			ArraysOperations.arrmulti(size[0], size[1], size[2], size[3]);
 			
 			break;
 		}

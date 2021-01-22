@@ -23,6 +23,7 @@ public class GUI extends Frame implements ActionListener, WindowListener{
 		btn = new Button("MathOP");
 		add(btn);
 		btn.addActionListener(this);
+		
 		btn2 = new Button("ArraysOP");
 		add(btn2);
 		btn2.addActionListener(this);

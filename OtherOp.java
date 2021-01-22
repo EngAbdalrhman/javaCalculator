@@ -6,7 +6,7 @@ import javax.swing.*;
 
 
 public class OtherOp  extends Frame implements ActionListener, WindowListener{
-	mathOperators math = new mathOperators();
+	MathOperators math = new MathOperators();
 	TextField txt;
 	TextField result;
 	Label lbl;

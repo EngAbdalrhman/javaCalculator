@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class SQRT  extends Frame implements ActionListener, WindowListener{
-	mathOperators math = new mathOperators();
+	MathOperators math = new MathOperators();
 	OtherOp sq = new OtherOp();
 	TextField x,y,z;
 	Button done;

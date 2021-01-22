@@ -3,16 +3,14 @@ package Calculator;
 import java.util.Scanner;
 
 public class ArrayGui {
-	 static Scanner input = new Scanner(System.in);
-	 Arrays gui = new Arrays();
-	public  void arrop (int size, int size2, int op) 
+
+	public  void arrop (int[][] array1, int[][] array2, int op) 
 	{
-		int[][] array1 = new int[size][size2];
-		int[][] array2 = new int[size][size2];
-		
+		int size = array1.length;
+		int size2 = array1[0].length;
+
 		int[][] result = new int[size][size2];
-		gui.fillArray(array1, 1);		
-		gui.fillArray(array2, 2);		
+	
 
 		for (int row = 0; row < result.length; row++)
 		{
@@ -29,7 +27,8 @@ public class ArrayGui {
 		}
 		
 		//printing
-		printing(result);
+		Printing pr = new Printing(size , size2 , result);
+		pr.setVisible(true);
 
 		
 	}//Operation Arrays
@@ -41,8 +40,8 @@ public class ArrayGui {
 		int[][] result = new int[size1][size4];
 		if (size2 == size3)
 		{
-			gui.fillArray(array1, 1);		
-			gui.fillArray(array2, 2);		
+//			fillArray(array1, 1);		
+//			fillArray(array2, 2);		
 			
 			for (int rows = 0; rows < result.length; rows++)
 			{
@@ -77,16 +76,5 @@ public class ArrayGui {
 		System.out.println("-------------------------------------");
 	}
 	
-	/*static void fillArray(int[][] array , int num) 
-	{
-		for (int i = 0; i < array.length; i++)
-		{
-			for (int j = 0; j < array[0].length; j++) 
-			{
-				
-				System.out.println("Enter the element row no."+ (i+1)+" col no." + (j+1)+" of Array" + num);
-				array[i][j] = input.nextInt();
-			}
-		}
-	}*/
+	
 }

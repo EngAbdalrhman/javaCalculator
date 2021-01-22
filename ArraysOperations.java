@@ -2,7 +2,7 @@ package Calculator;
 
 import java.util.Scanner;
 
-public class array {
+public class ArraysOperations {
 	static Scanner input = new Scanner(System.in);
 
 	public static void arrsum (int size, int size2) 

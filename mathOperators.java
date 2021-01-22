@@ -1,6 +1,6 @@
 package Calculator;
 
-public class mathOperators {
+public class MathOperators {
 	public double sum (double x, double y) 
 	{
 		

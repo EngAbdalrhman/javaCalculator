@@ -4,15 +4,13 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Arrays extends Frame implements ActionListener, WindowListener{
-	//ArrayGui arr = new ArrayGui();
 	Label lbl ;
 	Button back , nxt;
 	TextField txt , result;
 	String  snum;
-	int num = 0, n = 0,size1,size2,op = 1;
-	int[][] array = new int[size1][size2];
-	public Arrays(){
-		
+	int num = 0, n = 0,size1,size2,op;
+	public Arrays(int op){
+		this.op = op;
 		setLayout(new GridLayout(5,1));
 		lbl = new Label("Welcome To Array",Label.CENTER);
 		add(lbl);
@@ -66,67 +64,21 @@ public class Arrays extends Frame implements ActionListener, WindowListener{
 				break;
 			case 1:
 				size2 = num;
-				result.setText("");
-				break;
-			
-		}
-		if (n > 1 && n < ((size1 * size2) + 1))
-		{
-			arrop(size1, size2 , op);
-		}
-		if (n > (size1 * size2)) 
-		{ //	TODO
-			result.setText("result is >>");
-		}
-	}
-	 void fillArray(int[][] array , int num) 
-	{
-		for (int i = 0; i < array.length; i++)
-		{
-			for (int j = 0; j < array[0].length; j++) 
-			{
 				
-				result.setText("Enter the element row no."+ (i+1)+" col no." + (j+1)+" of Array" + num);
-				String arrays = txt.getText();//try
-				array[i][j] = Integer.parseInt(arrays.trim());
-			}
+				Fill f = new Fill(size1 , size2 , op);
+				f.setVisible(true);
+				this.dispose();
+				break;
 		}
+//  		if (n > 1)
+//		{
+//  			n = 0;
+//			fill f = new fill(size1 , size2);
+//			f.setVisible(true);
+//			this.dispose();
+//		}
 	}
-	 public  void arrop (int size, int size2, int op) 
-		{
-			int[][] array1 = new int[size][size2];
-			int[][] array2 = new int[size][size2];
-			
-			int[][] result = new int[size][size2];
-			fillArray(array1, 1);		
-			fillArray(array2, 2);		
 
-			for (int row = 0; row < result.length; row++)
-			{
-				for (int coulmns = 0; coulmns < result[0].length; coulmns++)
-				{
-					result[row][coulmns] = array1[row][coulmns] + array2[row][coulmns];
-				}
-			}
-			
-			printing(result);
-
-			
-		}//Operation Arrays
-	 void printing(int[][] result) 
-		{
-			System.out.println("-------------------------------------");
-
-			for (int i = 0; i < result.length; i++)
-			{
-				for (int j = 0; j < result[0].length; j++) 
-				{
-					System.out.print(result[i][j] + " ");
-				}
-				System.out.println();
-			}
-			System.out.println("-------------------------------------");
-		}
 	@Override
 	public void windowActivated(WindowEvent arg0) {
 		// TODO Auto-generated method stub
