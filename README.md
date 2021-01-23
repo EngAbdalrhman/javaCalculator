@@ -1,4 +1,4 @@
-# javaCalculator Advanced with GUI
+# jCalculator Advanced with GUI
 ## a simple java Calculator app.
 ## Both Console and GUI operations
 ## Author: Abdalrhman Mostafa
