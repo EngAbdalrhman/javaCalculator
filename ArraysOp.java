@@ -35,7 +35,7 @@ public class ArraysOp {
 		JButton btnSum = new JButton("SUM");
 		btnSum.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Arrays arr = new Arrays(1);
+				Arrays arr = new Arrays(1,1);
 				arr.setVisible(true);
 				frame.dispose();
 			}
@@ -46,7 +46,7 @@ public class ArraysOp {
 		JButton btnMin = new JButton("MINOUS");
 		btnMin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Arrays arr = new Arrays(2);
+				Arrays arr = new Arrays(2,1);
 				arr.setVisible(true);
 				frame.dispose();
 			}
@@ -57,6 +57,9 @@ public class ArraysOp {
 		JButton btnMulti = new JButton("MULTI");
 		btnMulti.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Arrays arr = new Arrays(0,2);
+				arr.setVisible(true);
+				frame.dispose();
 			}
 		});
 		btnMulti.setBounds(64, 109, 188, 47);

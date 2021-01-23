@@ -6,7 +6,7 @@ public class Fill extends Frame implements ActionListener, WindowListener {
 	ArrayGui arr = new ArrayGui();
 
     static final String TITLE = "Fiiling Array";
-    int row, col,fop;
+    int row, col,fop, opn;
 	Button done;
 	
 	Label lbl, lbl2;
@@ -17,30 +17,49 @@ public class Fill extends Frame implements ActionListener, WindowListener {
 
     Panel p1 , p2, p3 , p4;
     
-    public Fill(int size1 , int size2 , int op) {
+    public Fill(int size1 , int size2 , int op , int opn , int size3 , int size4) {
     	fop = op;
-		elements = new int [size1][size2];
-		elements2 = new int [size1][size2];
-
-        arr1 = new TextField [size1][size2];
-        arr2 = new TextField [size1][size2];
-
-    	num = new String[size1][size2];
-    	num2 = new String[size1][size2];
-
+    	this.opn = opn;
     	
-        setLayout(new GridLayout(3,1));
-        
-        lbl = new Label("Enter Array 1",Label.CENTER);
+    	 setLayout(new GridLayout(3,1));
+         
+         lbl = new Label("Enter Array 1",Label.CENTER);
+ 		
+ 		lbl2 = new Label("Enter Array 2",Label.CENTER);
+ 		 p1 = new Panel(new GridLayout(size1,size2));
+         add(p1);
+         
+ 		elements = new int [size1][size2];
+        arr1 = new TextField [size1][size2];
+    	num = new String[size1][size2];
+
+    	if (opn == 1) {
+    		elements2 = new int [size1][size2];
+
+            arr2 = new TextField [size1][size2];
+
+        	num2 = new String[size1][size2];
+        	
+        	
+             p2 = new Panel(new GridLayout(size1,size2));
+             add(p2);
+             
+    	}
+    	
+    	if (opn == 2) {
+    		elements2 = new int [size3][size4];
+
+            arr2 = new TextField [size3][size4];
+
+        	num2 = new String[size3][size4];
+
+             
+             p2 = new Panel(new GridLayout(size3,size4));
+             add(p2);
+             
+    	}
 		
-		lbl2 = new Label("Enter Array 2",Label.CENTER);
-		
-        p1 = new Panel(new GridLayout(size1,size2));
-        add(p1);
-        
-        p2 = new Panel(new GridLayout(size1,size2));
-        add(p2);
-        
+       
         p3 = new Panel(new GridLayout(2,1));
         add(p3);
 		p3.add(lbl);
@@ -118,9 +137,17 @@ public class Fill extends Frame implements ActionListener, WindowListener {
 	            		elements2[row][col] = Integer.parseInt(num2[row][col]);
 	            }
 	         }
+			switch(opn) 
+			{
+			case 1 :
+				arr.operationsArray(elements, elements2,fop);
+				this.dispose();
+				break;
+			case 2:
+				arr.multiplyArrays(elements, elements2);
+				break;
+			}
 			
-			arr.arrop(elements, elements2,fop);
-			this.dispose();
         }
 	}
 	

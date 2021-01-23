@@ -8,9 +8,10 @@ public class Arrays extends Frame implements ActionListener, WindowListener{
 	Button back , nxt;
 	TextField txt , result;
 	String  snum;
-	int num = 0, n = 0,size1,size2,op;
-	public Arrays(int op){
+	int num = 0, n = 0,size1,size2,size3,size4,op , opn;
+	public Arrays(int op ,int opn){
 		this.op = op;
+		this.opn = opn;
 		setLayout(new GridLayout(5,1));
 		lbl = new Label("Welcome To Array",Label.CENTER);
 		add(lbl);
@@ -56,27 +57,54 @@ public class Arrays extends Frame implements ActionListener, WindowListener{
 	// sum & sub
 	public void solve() 
 	{
-		switch(n)
+		switch (opn)
 		{
-			case 0:
-				size1 = num;
-				result.setText("Enter The secound Array Size");
-				break;
-			case 1:
-				size2 = num;
-				
-				Fill f = new Fill(size1 , size2 , op);
-				f.setVisible(true);
-				this.dispose();
-				break;
+		case 1: 
+			// Sum and Sub
+			switch(n)
+			{
+				case 0:
+					size1 = num;
+					result.setText("Enter The secound Array Size");
+					break;
+				case 1:
+					size2 = num;
+					
+					Fill f = new Fill(size1 , size2 , op ,opn, 0 ,0);
+					f.setVisible(true);
+					this.dispose();
+					break;
+			}
+			break;
+		case 2:
+			// Multiply
+			switch(n)
+			{
+				case 0:
+					size1 = num;
+					result.setText("Enter The secound Array Size");
+					break;
+				case 1:
+					size2 = num;
+					result.setText("Enter The Third Array Size");
+
+
+					break;
+				case 2:
+					size3 = num;
+					result.setText("Enter The Fource Array Size");
+
+					break;
+				case 3:
+					size4 = num;
+					Fill f = new Fill(size1 , size2 , op, opn , size3, size4);
+					f.setVisible(true);
+					this.dispose();
+					break;
+			}
 		}
-//  		if (n > 1)
-//		{
-//  			n = 0;
-//			fill f = new fill(size1 , size2);
-//			f.setVisible(true);
-//			this.dispose();
-//		}
+		
+
 	}
 
 	@Override

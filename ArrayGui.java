@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ArrayGui {
 
-	public  void arrop (int[][] array1, int[][] array2, int op) 
+	public  void operationsArray (int[][] array1, int[][] array2, int op) 
 	{
 		int size = array1.length;
 		int size2 = array1[0].length;
@@ -32,16 +32,17 @@ public class ArrayGui {
 
 		
 	}//Operation Arrays
-	public  void arrmulti (int size1 , int size2 , int size3, int size4) 
+	
+	public  void multiplyArrays (int[][] array1, int[][] array2) 
 	{
-		int[][] array1 = new int[size1][size2];
-		int[][] array2 = new int[size3][size4];
+		int size1 = array1.length;
+		int size2 = array1[0].length;
+		int size3 = array2.length;
+		int size4 = array2[0].length;
 		
 		int[][] result = new int[size1][size4];
 		if (size2 == size3)
-		{
-//			fillArray(array1, 1);		
-//			fillArray(array2, 2);		
+		{	
 			
 			for (int rows = 0; rows < result.length; rows++)
 			{
@@ -56,25 +57,10 @@ public class ArrayGui {
 			}
 			
 			//printing
-			printing(result);
-	
+			Printing pr = new Printing(size1 , size4 , result);
+			pr.setVisible(true);
 		}
 		
 	}//Multiply Arrays
-	static void printing(int[][] result) 
-	{
-		System.out.println("-------------------------------------");
-
-		for (int i = 0; i < result.length; i++)
-		{
-			for (int j = 0; j < result[0].length; j++) 
-			{
-				System.out.print(result[i][j] + " ");
-			}
-			System.out.println();
-		}
-		System.out.println("-------------------------------------");
-	}
-	
 	
 }
